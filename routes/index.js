@@ -30,6 +30,23 @@ router.post('/addbook', function (req, res) {
   });
 
 });
+router.get('/updatebook/:id', function (req, res) {
+
+
+  var idBooks = req.params.id;
+
+
+  connection2.query("select * from books where idBooks = ?", [idBooks], function (err, result) {
+
+    if (err) {
+      console.error("Unable to update selected details");
+    } else {
+      res.render('edit', { books: result });
+    }
+  });
+ 
+
+});
 
 
 module.exports = router;
