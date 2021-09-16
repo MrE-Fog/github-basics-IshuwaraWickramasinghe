@@ -27,10 +27,36 @@
         <div class="col-md-8">
 
             {{#each books}}
+<form class="form-horizontal" method="POST" action="/bookupdatedb/{{this.idBooks}}">
+{{!-- idBooks, , , language, , --}}
+  <div class="mb-3 row">
+<div class="col-md-2">
+<label for="inputEmail3" class="control-label">Book ISBN </label>
+ </div>
+ <div class="col-md-6">
+ <input type="text" value="{{this.ISBN}}" class="form-control" id="ISBN" placeholder="Book ISBN"
+ name="ISBN">
+  </div>
 
+ </div>
+  <div class="mb-3 row">
 
+  </div>
+  <div class="mb-3 row">
 
-            {{/each}}
+  </div>
+  <div class="mb-3 row">
+
+  </div>
+  <div class="mb-3 row">
+
+  </div>
+  <div class="mb-3 row">
+
+  </div>
+</form>
+
+{{/each}}
 
 
         </div>
