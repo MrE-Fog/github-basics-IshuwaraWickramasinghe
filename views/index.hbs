@@ -1,0 +1,161 @@
+{{!-- <h2>Welcome to NbDNp</h2>
+<h3>{{{title}}}</h3> --}}
+
+<style>
+    background-image: url("background.jpg");
+</style>
+
+<div class="container bg-dark text-white bg-opacity-75">
+
+    <div class="row bg-dark">
+        <div class="col col-lg-2">
+            
+        </div>
+        <div class="col-md-center" >
+            <h1 class="text-center font-monospace "  style="color: rgb(202, 202, 202);">~ Library Management System ~</h1> 
+        </div>
+        <div class="col col-lg-2">
+            
+        </div>
+
+    </div>
+    <div class="row">
+
+        <hr>
+
+        <h3 style="color: rgb(255, 94, 94);">Add new book to the system</h3>
+        <br> <br> <br>
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+
+            ​
+            <form class="form-horizontal" method="POST" action="/addbook">
+
+                <div class="mb-3 row">
+
+                    <div class="col-md-2">
+                        <label for="inputEmail3" class="control-label">Book ISBN </label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="ISBN" placeholder="Book ISBN" name="ISBN">
+                    </div>
+
+                </div>
+                <div class="mb-3 row">
+
+                    <div class="col-md-2">
+                        <label for="inputEmail3" class="control-label">Book Title</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="Title" placeholder="Book Title" name="Title">
+                    </div>
+
+                </div>
+                <div class="mb-3 row">
+
+                    <div class="col-md-2">
+                        <label for="inputEmail3" class="control-label">Language</label>
+                    </div>
+                    <div class="col-md-6">
+
+
+                        <select class="form-select" aria-label="Default select example" name="flexRadioDefault">
+                            <option selected>Sinhala</option>
+                            <option>English</option>
+                            <option>Tamil</option>
+                        </select>
+
+                    </div>
+
+
+                </div>
+                <div class="mb-3 row">
+
+                    <div class="col-md-2">
+                        <label for="inputEmail3" class="control-label">Author</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="Author" placeholder="Author" name="Author">
+                    </div>
+
+                </div>
+                <div class="mb-3 row">
+
+                    <div class="col-md-2">
+                        <label for="inputEmail3" class="control-label">Publication</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="Publication" placeholder="Publication"
+                            name="Publication">
+                    </div>
+
+                </div>
+                <div class="mb-3 row">
+
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-success">Save Book Details</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+        <div class="col-md-2"></div>
+
+    </div>
+  <br> <br>
+    <hr>
+
+
+    <div class="row">
+        <h3  style="color: rgb(255, 94, 94);">View and update previous book details</h3>
+        <br> <br> <br>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+
+            <table class="table table-success table-striped table-sm">
+
+                <thead>
+                    <th>ISBN</th>
+                    <th>Book Title</th>
+                    <th>Language</th>
+                    <th>Author</th>
+                    <th>Publication</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    {{#each books}}
+                    <tr>
+                        {{!-- idBooks, ISBN, title, language, auther, publication --}}
+                        <td>{{this.ISBN}}</td>
+                        <td>{{this.title}}</td>
+                        <td>{{this.language}}</td>
+                        <td>{{this.auther}}</td>
+                        <td>{{this.publication}}</td>
+                        <td>
+
+                            <a href="/updatebook/{{this.idBooks}}"><button type="button"
+                                    class="btn btn-primary">Update</button></a>
+                            <a href="/deletebook/{{this.idBooks}}"><button type="button"
+                                    class="btn btn-danger">Delete</button></a>
+                        </td>
+
+                    </tr>
+
+                    {{/each}}
+
+                </tbody>
+
+
+            </table>
+
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+
+
+</div>
