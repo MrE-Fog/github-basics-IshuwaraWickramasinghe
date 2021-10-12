@@ -115,7 +115,41 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
 
+            <table class="table table-success table-striped table-sm">
 
+                <thead>
+                    <th>ISBN</th>
+                    <th>Book Title</th>
+                    <th>Language</th>
+                    <th>Author</th>
+                    <th>Publication</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    {{#each books}}
+                    <tr>
+                        {{!-- idBooks, ISBN, title, language, auther, publication --}}
+                        <td>{{this.ISBN}}</td>
+                        <td>{{this.title}}</td>
+                        <td>{{this.language}}</td>
+                        <td>{{this.auther}}</td>
+                        <td>{{this.publication}}</td>
+                        <td>
+
+                            <a href="/updatebook/{{this.idBooks}}"><button type="button"
+                                    class="btn btn-primary">Update</button></a>
+                            <a href="/deletebook/{{this.idBooks}}"><button type="button"
+                                    class="btn btn-danger">Delete</button></a>
+                        </td>
+
+                    </tr>
+
+                    {{/each}}
+
+                </tbody>
+
+
+            </table>
 
 
         </div>

@@ -5,9 +5,9 @@ var settings = {
 
     host: 'localhost',
     user: 'root',
-    password: '031519.chuti',
-    database: 'library_management',
-    insecureAuth : true
+    password: '',
+    database: 'library_management'
+
    
 };
 
